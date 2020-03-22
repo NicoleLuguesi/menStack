@@ -3,6 +3,8 @@ const { Reservation } = require('../../models/Reservation')
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
+const isEmpty = require("is-empty");
+
 
 // router.get("/", async (req, res) => {
 //     res.send("Route is working");
@@ -11,6 +13,7 @@ const router = express.Router();
 //get ALL rooms
 router.get("/getallrooms", async (req, res) => {
     const name = await hotelSchema.find();
+    if(isEmpty(name)) return res.status(404).json('No Rooms Found')
     res.send(name);
 });
 
