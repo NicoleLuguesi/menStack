@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1</h1>
-  </body>
-</html>
+    <head>
+        <!-- <script src="scriptXHR.js"></script> -->
+        <script src="scriptFetch.js"></script>
+    </head>
+    <body>
+        
+        <div>
+            <nav>
+                <ul id="nav-mobile">
+                <li><a href="Home">Home</a></li>
+                <li><a href="Reservations">Reservations</a></li>
+                <li><a href="AboutUs">About Us</a></li>
+                <li><a href="ContactUs">Contact Us</a></li>
+                </ul>
+            </div>
+
+              </nav>
+
+            <h1>N.A.S.A Hotel</h1>
+            <button id="all" onclick="getAllRooms()">GET ALL ROOMS</button>
+
+            <div id="allrooms" style="padding: 10px">
+            
+            </div>
+
+            <label for="checkIn">CHECK IN</label>
+            <input type="date" name="checkIn" id="checkIn" placeholder="checkIn">
+            <label for="checkOut">CHECK OUT</label>
+            <input type="date" name="checkOut" id="checkOut" placeholder="checkOut">
+            <label for="numberOfNights">NUMBER OF NIGHTS</label>
+            <input type="number" name="numberOfNights" id="numberOfNights" placeholder="numberOfNights">
+            <label for="roomType">ROOM TYPE</label>
+            <input type="text" name="roomType" id="roomType" placeholder="roomType">
+            <button id="post" onclick="createReservation()">Create Reservation</button>
+            <button id="update" onclick="updateReservation()">Update Reservation</button>
+            <button id="delete" onclick="deleteReservation()">Delete Reservation</button>
+        
+           
+
+                <!-- <div id="hotelInfo">
+                <form action="api/nasa" method="POST">
+                <input type="date" placeholder="checkIn" name="checkIn">
+                <input type="date" placeholder="checkOut" name="checkOut">
+                <input type="text" placeholder="numberOfNights" name="numberOfNights">
+                <input type="text" placeholder="roomType" name="roomType">
+                <button id="submit" type="submit">Submit</button>
+                <button id="get" onclick="name">List Rooms</button>
+                </form>
+                </div> -->
+
+            </body>
+</html> 
