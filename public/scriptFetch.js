@@ -1,5 +1,5 @@
 const getAllRooms = () => {
-    const url = "/api/nasa/getallmessages";
+    const url = "/api/nasa/getallrooms";
     fetch(url)
       .then(response => {
          //console.log(response.json());
