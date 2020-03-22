@@ -4,21 +4,26 @@ const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 
-//get list of rooms
-router.get('/', async (req, res) => {
+// router.get("/", async (req, res) => {
+//     res.send("Route is working");
+// });
+
+//get ALL rooms
+router.get("/getallrooms", async (req, res) => {
     const name = await hotelSchema.find();
     res.send(name);
 });
 
-//get one single reservation by id 
-router.get('/:id', async (req, res) => {
-    const reservation= await Reservation.findById(req.params.id);
+
+//get ONE single reservation by id 
+router.get("/:id", async (req, res) => {
+    const reservation = await Reservation.findById(req.params.id);
     if (!reservation) return res.status(404).send('The reservation with the given ID was not found.');
     res.send(reservation);
 });
 
 //make a reservation
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
     let hotelReservation = new Reservation({
         checkIn: req.body.checkIn,
         checkOut: req.body.checkOut,
@@ -32,7 +37,7 @@ router.post('/', async (req, res) => {
 });
 
 //update a reservation
-router.put('/:id', async (req, res) => {
+router.put("/:id", async (req, res) => {
       const hotelReservation = await Reservation.findByIdAndUpdate(req.params.id, {
         checkIn: req.body.checkIn,
         checkOut: req.body.checkOut,
